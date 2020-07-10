@@ -1,6 +1,6 @@
 import isEmpty from "lodash-ts/isEmpty";
 
-export abstract class BaseApi {
+export default abstract class BaseApi {
 
     protected urlPrefix = ""
 

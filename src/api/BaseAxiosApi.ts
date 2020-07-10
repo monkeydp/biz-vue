@@ -1,8 +1,8 @@
 import axios, {AxiosInstance, AxiosResponse} from "axios";
 import {FailResult, Result, SuccessResult} from "./Result";
-import {BaseApi} from "./BaseApi";
+import BaseApi from "./BaseApi";
 
-export abstract class BaseAxiosApi extends BaseApi {
+export default abstract class BaseAxiosApi extends BaseApi {
 
     protected axios: AxiosInstance =
         axios.create({
