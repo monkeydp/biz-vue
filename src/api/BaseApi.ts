@@ -1,7 +1,5 @@
 import isEmpty from "lodash-ts/isEmpty";
-import {Injectable} from "@vue-ioc/core";
 
-@Injectable()
 export abstract class BaseApi {
 
     protected urlPrefix = ""

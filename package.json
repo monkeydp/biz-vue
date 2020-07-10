@@ -7,7 +7,6 @@
     "src"
   ],
   "dependencies": {
-    "@vue-ioc/core": "^0.2.0",
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
     "lodash-ts": "^1.2.7",

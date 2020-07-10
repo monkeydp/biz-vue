@@ -1,9 +1,7 @@
-import {Injectable} from "@vue-ioc/core";
 import axios, {AxiosInstance, AxiosResponse} from "axios";
 import {FailResult, Result, SuccessResult} from "./Result";
 import {BaseApi} from "./BaseApi";
 
-@Injectable()
 export abstract class BaseAxiosApi extends BaseApi {
 
     protected axios: AxiosInstance =

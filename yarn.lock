@@ -989,11 +989,6 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@vue-ioc/core@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.npm.taobao.org/@vue-ioc/core/download/@vue-ioc/core-0.2.0.tgz#b04ff6a4e98455aa2480aabb3c0db349f502cc8d"
-  integrity sha1-sE/2pOmEVaokgKq7PA2zSfUCzI0=
-
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0":
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/@vue/babel-helper-vue-jsx-merge-props/download/@vue/babel-helper-vue-jsx-merge-props-1.0.0.tgz#048fe579958da408fb7a8b2a3ec050b50a661040"
