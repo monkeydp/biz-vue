@@ -12,7 +12,9 @@
   "scripts": {
     "ipeers": "install-peers -f",
     "build": "vue-cli-service build src/main.ts --target lib --name biz-vue",
-    "rm:dist": "rimraf dist",
+    "rm": "rimraf",
+    "rm:dist": "yarn rm dist",
+    "rm:nm": "yarn rm node_modules",
     "cbuild": "yarn rm:dist & yarn ipeers & yarn build"
   },
   "dependencies": {
@@ -39,8 +41,5 @@
   },
   "peerDependencies": {
     "vue": ">2.6.0"
-  },
-  "publishConfig": {
-    "registry": "http://localhost:9090/repository/npm-hosted/"
   }
 }
