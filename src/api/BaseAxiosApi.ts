@@ -1,18 +1,22 @@
-import axios, {AxiosInstance, AxiosResponse} from "axios";
+import axios, {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
 import {FailResult, Result, SuccessResult} from "./Result";
 import BaseApi from "./BaseApi";
 
 export default abstract class BaseAxiosApi extends BaseApi {
 
     protected axios: AxiosInstance =
-        axios.create({
-            baseURL: this.baseUrl()
-        });
+        axios.create(this.axiosRequestConfig());
 
     constructor() {
         super();
         this.handleRequest()
         this.handleResponse()
+    }
+
+    protected axiosRequestConfig(): AxiosRequestConfig {
+        return {
+            baseURL: this.baseUrl()
+        }
     }
 
     protected result(resp: AxiosResponse): Result {
@@ -43,7 +47,7 @@ export default abstract class BaseAxiosApi extends BaseApi {
                 }
 
                 const res = this.result(resp)
-                Promise.reject(new FailResult("321", "用户未登录"))
+
                 if (res instanceof SuccessResult) {
                     const successResult = res as SuccessResult
                     return Promise.resolve(successResult.data)
