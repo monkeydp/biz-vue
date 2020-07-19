@@ -41,5 +41,8 @@
   },
   "peerDependencies": {
     "vue": ">2.6.0"
+  },
+  "publishConfig": {
+    "registry": "http://mle5.mulaitek.cn:802/repository/npm-hosted/"
   }
 }

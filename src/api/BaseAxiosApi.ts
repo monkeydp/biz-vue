@@ -43,7 +43,7 @@ export default abstract class BaseAxiosApi extends BaseApi {
                 }
 
                 const res = this.result(resp)
-
+                Promise.reject(new FailResult("321", "用户未登录"))
                 if (res instanceof SuccessResult) {
                     const successResult = res as SuccessResult
                     return Promise.resolve(successResult.data)
