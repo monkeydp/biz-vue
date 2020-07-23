@@ -1,3 +1,4 @@
+import _ from "lodash"
 export class Result {
     readonly code!: string;
 
@@ -23,4 +24,26 @@ export class FailResult extends Result {
         super(code);
         this.msg = msg;
     }
+}
+
+export class ArgsIllegalResult extends FailResult {
+    readonly validErrors!: Array<ValidError>
+
+    constructor(code: string, msg: string, validErrors: Array<ValidError>) {
+        super(code, msg);
+        this.validErrors = validErrors;
+    }
+
+    errorMessagesOneLine(): string {
+        return _.map(this.validErrors, "message")
+            .join(", ")
+    }
+}
+
+class ValidError {
+    message!: string
+    cstrName!: string
+    objName!: string
+    propName!: string
+    illegalValue!: string
 }

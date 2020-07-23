@@ -18,9 +18,10 @@
     "cbuild": "yarn rm:dist & yarn ipeers & yarn build"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.158",
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
-    "lodash-ts": "^1.2.7",
+    "lodash": "^4.17.19",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^8.4.2"
   },

@@ -1,6 +1,7 @@
 import axios, {AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
-import {FailResult, Result, SuccessResult} from "./Result";
+import {ArgsIllegalResult, FailResult, Result, SuccessResult} from "./Result";
 import BaseApi from "./BaseApi";
+import ResultCode from "./ResultCode";
 
 export default abstract class BaseAxiosApi extends BaseApi {
 
@@ -21,11 +22,15 @@ export default abstract class BaseAxiosApi extends BaseApi {
 
     protected result(resp: AxiosResponse): Result {
         const code = resp.data.code
-        return code == "200" ?
-            new SuccessResult(code, resp.data.data)
-            : new FailResult(code, resp.data.msg)
+        switch (code) {
+            case ResultCode.SUCCESS:
+                return new SuccessResult(code, resp.data.data)
+            case ResultCode.ARGUMENT_ILLEGAL:
+                return new ArgsIllegalResult(code, resp.data.msg, resp.data.validErrors)
+            default:
+                return new FailResult(code, resp.data.msg)
+        }
     }
-
 
     private handleRequest() {
         this.axios.interceptors.request.use(
