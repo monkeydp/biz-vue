@@ -1,11 +1,10 @@
 import {ErrorType} from "./ErrorType";
-import {BizError} from "./BizError";
 
 /**
  * 内部异常不会报给用户看
  */
 export type InnerError = Error & {
-    errorType: ErrorType
+    errorType: ErrorType;
 }
 
 export class BaseInnerError implements InnerError {

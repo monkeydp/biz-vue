@@ -4,7 +4,7 @@
 import {ErrorType} from "./ErrorType";
 
 export type BizError = Error & {
-    errorType: ErrorType
+    errorType: ErrorType;
 }
 
 export class BaseBizError implements BizError {
